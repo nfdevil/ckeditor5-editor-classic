@@ -1,6 +1,6 @@
 {
 	"name": "@ckeditor/ckeditor5-editor-inkendaal",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Classic editor implementation for CKEditor 5.",
 	"keywords": [
 		"ckeditor",
@@ -68,6 +68,7 @@
 	"files": [
 		"build"
 	],
+	"main": "./build/ckeditor.js",
 	"scripts": {
 		"lint": "eslint --quiet '**/*.js'",
 		"precommit": "lint-staged",
