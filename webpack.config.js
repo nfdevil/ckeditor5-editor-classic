@@ -23,7 +23,10 @@ module.exports = {
 		hints: false
 	},
 
-	entry: path.resolve(__dirname, 'src', 'ckeditor.js'),
+	entry: [
+		path.resolve(__dirname, 'src', 'ckeditor.js'),
+		require.resolve('regenerator-runtime/runtime.js'),
+	],
 
 	output: {
 		// The name under which the editor will be exported.
@@ -61,6 +64,14 @@ module.exports = {
 
 	module: {
 		rules: [{
+				test: /ckeditor5-[^\/\\]+[\/\\].*\.js$/,
+				use: [{
+					loader: 'babel-loader',
+					options: {
+						presets: [require('@babel/preset-env')]
+					}
+				}]
+			}, {
 				test: /\.svg$/,
 				use: ['raw-loader']
 			},
