@@ -71,7 +71,6 @@
 	"main": "./build/ckeditor.js",
 	"scripts": {
 		"lint": "eslint --quiet '**/*.js'",
-		"precommit": "lint-staged",
 		"build": "webpack --mode production --verbose"
 	},
 	"lint-staged": {
